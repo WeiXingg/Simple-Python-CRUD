@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>
+    <h1>Simple CRUD Program using Python (local)</h1>
+</title>
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <h2>Notes</h2>
+    {% if notes|length < 1 %}
+    <h5>There are no notes created. You may create one below.</h5>
+    {% else %}
+    <table>
+        <tr>
+            <th>Note</th>
+            <th>Date Added</th>
+            <th>Actions</th>
+        </tr>
+        {% for note in notes %}
+            <tr>
+                <td>{{ note.content }}</td>
+                <td>{{ note.date_created.date() }}</td>
+                <td>
+                    <a href="/delete/{{note.id}}">Delete</a>
+                    <br>
+                    <a href="/update/{{note.id}}">Update</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+
+    <div class="form">
+        <form action="/" method="POST">
+            <input type="text" name="content">
+            <input type="submit" value="Add Note">
+        </form>
+    </div>
+</div>
+{% endblock %}

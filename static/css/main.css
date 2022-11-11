@@ -1,0 +1,36 @@
+head, html{
+    margin: 0 auto;
+    width: 400px;
+    font-family: 'Arial';
+    background-color: lightblue;
+    text-align: center;
+}
+
+.content {
+    margin: 0 auto;
+    width: 400px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    height: 30px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+  
+tr:nth-child(even) {
+    background-color: #eee;
+}
+  
+tr:nth-child(odd) {
+    background-color: #fff;
+}
+
+.form {
+    margin-top: 20px;
+}
